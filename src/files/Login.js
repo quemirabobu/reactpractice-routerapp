@@ -3,20 +3,13 @@ import React, { Outlet,createContext,useState,useEffect,useCallback,useReducer, 
 import axios from 'axios';
 import styled from 'styled-components';
 
-function Mypage() {
+function Login() {
 const navi = useNavigate();
-const isLogin = false;
-useEffect( ()=>{
-    if(!isLogin){
-        navi('/login')
-    }
-
-},[navi, isLogin] )
     return (
         <div>
-            mypage
+            
         </div>
     );
 }
 
-export default Mypage;
+export default Login;
