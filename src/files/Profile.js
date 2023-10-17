@@ -3,18 +3,25 @@ import React, { Outlet,createContext,useState,useEffect,useCallback,useReducer, 
 import axios from 'axios';
 import styled from 'styled-components';
 
+const profiles = {
+    go: {name: "고기천", job: "강사"}, hong: {name: "홍길동", job: "의적"}
+};
 function Profile() {
-const navi = useNavigate();
-const param = useParams();
-const profiles = {go : {name:"gogicheon", job:"teacher"}, hong:{name:"honggildong", job:"nono"}}
-
-    const giveprofile = profiles[param.firstName]
-
-return (
+    //url 파라미터 받아주기
+    const params = useParams();
+    useEffect(()=>{
+        console.log(params);
+    },[])
+    const selectedProfile = profiles[params.firstName];
+    return (
         <div>
-            <p>여기는 프로필</p>
-            {giveprofile? (<div> <p>{giveprofile.name}</p>  <p> {giveprofile.job} </p></div>) : (<div>profile doesnt exist</div>) }
-
+            <h1> 여기는 프로필 </h1>
+            { selectedProfile? (
+                <div>
+                    <h2> {selectedProfile.name}</h2>
+                    <p>{selectedProfile.job}</p>
+                </div>) : (  <p>notExist profile</p> )
+            }
         </div>
     );
 }

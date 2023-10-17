@@ -1,6 +1,8 @@
-import {Outlet,Link, NavLink, useNavigate} from 'react-router-dom';
-import React from 'react';
-
+import {Link,Outlet, NavLink, useNavigate} from 'react-router-dom';
+import React, { createContext, useState, useEffect, useCallback, useReducer, useRef,} from 'react';
+import axios from 'axios';
+import styled from 'styled-components';
+import introduce from "./Introduce";
 function Layout() {
 
     //useNavigate : Link컴포넌트 없이 링크 이동
@@ -22,7 +24,6 @@ function Layout() {
     const movePage = (pageName)=>{
         navi('/' + pageName)
     }
-
     return (
         <div>
             <header style={{background: "lightgray", padding: 16, fontSize: 24}}> Header

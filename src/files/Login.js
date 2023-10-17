@@ -7,7 +7,8 @@ function Login() {
 const navi = useNavigate();
     return (
         <div>
-            
+            <NavLink to={"/about"}>ef</NavLink>
+            hahah
         </div>
     );
 }
